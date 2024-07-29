@@ -1,0 +1,5 @@
+---
+# vars file for ec2
+key_name: devops_key_pair
+vpc_subnet_id: subnet-021930f1a46c48061
+image_id: ami-04a81a99f5ec58529

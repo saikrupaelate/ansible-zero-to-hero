@@ -6,10 +6,11 @@
   - name: Create EC2 instances
     amazon.aws.ec2_instance:
       name: "{{ item.name }}"
-      key_name: "abhi-aws-keypair"
+      key_name: "devops_key_pair"
+      subnet_id: "subnet-021930f1a46c48061"
       instance_type: t2.micro
       security_group: default
-      region: ap-south-1
+      region: us-east-1
       aws_access_key: "{{ec2_access_key}}"  # From vault as defined
       aws_secret_key: "{{ec2_secret_key}}"  # From vault as defined      
       network:
@@ -18,6 +19,6 @@
       tags:
         environment: "{{ item.name }}"
     loop:
-      - { image: "ami-0e1d06225679bc1c5", name: "manage-node-1" } # Update AMI ID according 
-      - { image: "ami-0f58b397bc5c1f2e8", name: "manage-node-2" } # to your account
-      - { image: "ami-0f58b397bc5c1f2e8", name: "manage-node-3" }
+      - { image: "ami-0427090fd1714168b", name: "manage-node-1" } # Update AMI ID according 
+      - { image: "ami-04a81a99f5ec58529", name: "manage-node-2" } # to your account
+      - { image: "ami-04a81a99f5ec58529", name: "manage-node-3" }
